@@ -8,6 +8,12 @@
  *
  * @author carlo
  */
+import org.apache.commons.validator.UrlValidator;
+import org.apache.oro.text.perl.Perl5Util;
+import Clases.Radioemisora;
+
+
+
 public class MainWindow extends javax.swing.JFrame {
 
     /**
@@ -27,19 +33,125 @@ public class MainWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDialog1 = new javax.swing.JDialog();
+        RegistRadio = new javax.swing.JDialog();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        Nombre = new javax.swing.JTextField();
+        Url = new javax.swing.JTextField();
+        DirF = new javax.swing.JTextField();
+        Frec = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        ErNomb = new javax.swing.JLabel();
+        ErrDir = new javax.swing.JLabel();
+        ErrUrl = new javax.swing.JLabel();
+        ErrFrec = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel2.setText("Nombre de Radioemisora:");
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setText("Dirección física:");
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel4.setText("Dirección URL");
+
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel5.setText("Frecuencia:");
+
+        Nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreActionPerformed(evt);
+            }
+        });
+
+        Url.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UrlActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Crear");
+        jButton2.setToolTipText("");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        ErNomb.setForeground(new java.awt.Color(255, 51, 51));
+
+        ErrDir.setForeground(new java.awt.Color(255, 51, 51));
+
+        ErrUrl.setForeground(new java.awt.Color(255, 51, 51));
+
+        ErrFrec.setForeground(new java.awt.Color(255, 51, 51));
+
+        javax.swing.GroupLayout RegistRadioLayout = new javax.swing.GroupLayout(RegistRadio.getContentPane());
+        RegistRadio.getContentPane().setLayout(RegistRadioLayout);
+        RegistRadioLayout.setHorizontalGroup(
+            RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegistRadioLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Url)
+                    .addComponent(DirF)
+                    .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(RegistRadioLayout.createSequentialGroup()
+                        .addComponent(Frec, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ErrFrec, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ErNomb, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ErrDir, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ErrUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistRadioLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(27, 27, 27))
         );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        RegistRadioLayout.setVerticalGroup(
+            RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegistRadioLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ErNomb, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(DirF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ErrDir, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4)
+                        .addComponent(Url, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ErrUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistRadioLayout.createSequentialGroup()
+                        .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(Frec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addComponent(jButton2))
+                    .addGroup(RegistRadioLayout.createSequentialGroup()
+                        .addComponent(ErrFrec, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,14 +197,90 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        jLabel1.setVisible(false);
-        jDialog1.setVisible(true);
-        jDialog1.setTitle("Registro Radioemisora");
-        jDialog1.setLocationRelativeTo(null);
-        
-        jDialog1.setSize(300,400);
+       
+        RegistRadio.setVisible(true);
+        RegistRadio.setTitle("Registro Radioemisora");
+        RegistRadio.setLocationRelativeTo(null);
+        RegistRadio.setSize(500,280);
+
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void UrlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UrlActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UrlActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:   
+        UrlValidator validacion=new UrlValidator();
+        if(validacion.isValid(Url.getText())&&!Nombre.getText().isEmpty()&&!DirF.getText().isEmpty()&&!Frec.getText().isEmpty())
+        {
+            ErrUrl.setText("");
+            ErNomb.setText("");
+            ErrDir.setText("");
+            ErrFrec.setText(""); 
+            try 
+            {
+                float f = Float.valueOf(Frec.getText()).floatValue();
+                jLabel1.setVisible(false);
+                jButton1.setVisible(false); 
+                Radioemisora radio=new Radioemisora(Nombre.getText(),DirF.getText(),f,Url.getText());
+                System.out.print(radio.toString());
+            }
+            catch (NumberFormatException nfe) 
+            {
+                ErrFrec.setText("*");
+                System.err.println("NumberFormatException: " + nfe.getMessage());
+            }
+        }
+        else if(!validacion.isValid(Url.getText())&&Nombre.getText().isEmpty()&&DirF.getText().isEmpty()&&Frec.getText().isEmpty())
+        {
+            ErrUrl.setText("*");
+            ErNomb.setText("*");
+            ErrDir.setText("*");
+            ErrFrec.setText("*");
+        }
+        else if(!validacion.isValid(Url.getText()))
+        {
+            ErrUrl.setText("*");
+
+        }
+        else if(Nombre.getText().isEmpty())
+        {
+            ErNomb.setText("*");
+            ErrUrl.setText("");
+
+        }
+        else if(DirF.getText().isEmpty())
+        {
+            ErrDir.setText("*");
+            ErrUrl.setText("");
+            ErNomb.setText("");
+        }
+        else if(Frec.getText().isEmpty())
+        {
+            ErrFrec.setText("*");
+            ErrUrl.setText("");
+            ErNomb.setText("");
+            ErrDir.setText("");
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,8 +318,21 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField DirF;
+    private javax.swing.JLabel ErNomb;
+    private javax.swing.JLabel ErrDir;
+    private javax.swing.JLabel ErrFrec;
+    private javax.swing.JLabel ErrUrl;
+    private javax.swing.JTextField Frec;
+    private javax.swing.JTextField Nombre;
+    private javax.swing.JDialog RegistRadio;
+    private javax.swing.JTextField Url;
     private javax.swing.JButton jButton1;
-    private javax.swing.JDialog jDialog1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
