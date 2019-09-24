@@ -5,69 +5,75 @@
  */
 package Clases;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author carlo
  */
+
 public class Radioemisora {
     private String nombre;
-    private String direccion;
+    private String direccionFi;
     private float frecuencia;
-    private String linkWeb;
-    private int cantCanciones;
+    private String URL;
+    private ArrayList <Locutor> locutores;
+    private ArrayList <Programa> programas; 
+    private ArrayList <Digital> digitales;
 
-    @Override
-    public String toString() {
-        return "Radioemisora{" + "nombre=" + nombre + ", direccion=" + direccion + ", frecuencia=" + frecuencia + ", linkWeb=" + linkWeb + ", cantCanciones=" + cantCanciones + '}';
-    }
+        public Radioemisora(String nombre, String direccionFi, float frecuencia, String URL) {
+            this.nombre = nombre;
+            this.direccionFi = direccionFi;
+            this.frecuencia = frecuencia;
+            this.URL = URL;
+        }
+        public String getNombre() {
+            return nombre;
+        }
 
-    public int getCantCanciones() {
-        return cantCanciones;
-    }
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
 
-    public void setCantCanciones(int cantCanciones) {
-        this.cantCanciones = cantCanciones;
-    }
-    
-    public String getNombre() {
-        return nombre;
-    }
+        public String getDireccionFi() {
+            return direccionFi;
+        }
 
-    public Radioemisora(String nombre, String direccion, float frecuencia, String linkWeb) {
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.frecuencia = frecuencia;
-        this.linkWeb = linkWeb;
-        this.cantCanciones=0;
-    }
+        public void setDireccionFi(String direccionFi) {
+            this.direccionFi = direccionFi;
+        }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+        public float getFrecuencia() {
+            return frecuencia;
+        }
 
-    public String getDireccion() {
-        return direccion;
-    }
+        public void setFrecuencia(float frecuencia) {
+            this.frecuencia = frecuencia;
+        }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
+        public String getURL() {
+            return URL;
+        }
 
-    public float getFrecuencia() {
-        return frecuencia;
-    }
+        public void setURL(String URL) {
+            this.URL = URL;
+        }
+        
+        public void agregarLocutor(Locutor locutor){
+            (this.locutores).add (locutor);
+        }
+        
+        public void agregarPrograma(Programa programa){
+            (this.programas).add (programa);
+        }
+        
+        public void agregarDigital(Digital digital){
+            (this.digitales).add (digital);
+        }
 
-    public void setFrecuencia(float frecuencia) {
-        this.frecuencia = frecuencia;
-    }
-
-    public String getLinkWeb() {
-        return linkWeb;
-    }
-
-    public void setLinkWeb(String linkWeb) {
-        this.linkWeb = linkWeb;
-    }
-    
+        @Override
+        public String toString() {
+            return "Radioemisora{" + "nombre=" + nombre + ", direccionFi=" + direccionFi + ", frecuencia=" + frecuencia + ", URL=" + URL + '}';
+        }
 }
     

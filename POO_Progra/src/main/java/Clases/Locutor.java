@@ -16,16 +16,16 @@ public class Locutor{
     private String correo;
     private String telefono;
     private String direccion;
-    private String sexo;
-    private String nacimiento;
+    private boolean sexo;
+    private String fechaNacimiento;
 
-     public Locutor(String identificacion, String nombre, String telefono, String direccion, String sexo, String nacimiento) {
+     public Locutor(String identificacion, String nombre, String telefono, String direccion, boolean sexo, String fechaNacimiento) {
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
         this.sexo = sexo;
-        this.nacimiento = nacimiento;
+        this.fechaNacimiento = fechaNacimiento;
      }
      
     public String getIdentificacion() {
@@ -68,21 +68,25 @@ public class Locutor{
         this.direccion = direccion;
     }
 
-    public String isSexo() {
+    public boolean isSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(boolean sexo) {
         this.sexo = sexo;
     }
 
-    public String getNacimiento() {
-        return nacimiento;
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setNacimiento(String nacimiento) {
-        this.nacimiento = nacimiento;
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+    
+    @Override
+    public String toString (){
+        return "Locutor{" + "nombre=" + nombre + ", identificacion=" + identificacion + ", correo=" + correo + ", telefono=" + telefono + ", sexo=" + sexo + ", Fecha de nacimiento=" + fechaNacimiento + ", direccion="+direccion+'}';
     }
 }
-
 
