@@ -327,6 +327,15 @@ private static Radioemisora emisora = null;
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
+        if(emisora!=null)
+        {
+            RegistrarLocutor ventL=new RegistrarLocutor();
+            ventL.setVisible(true);
+        }
+        else
+        {
+          JOptionPane.showMessageDialog(null, "No existe una radioemisora");
+        }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
