@@ -16,10 +16,10 @@ public class Locutor{
     private String correo;
     private String telefono;
     private String direccion;
-    private boolean sexo;
+    private String sexo;
     private String fechaNacimiento;
 
-     public Locutor(String identificacion, String nombre, String telefono, String direccion, boolean sexo, String fechaNacimiento) {
+     public Locutor(String identificacion, String nombre, String telefono, String direccion, String sexo, String fechaNacimiento) {
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -68,11 +68,11 @@ public class Locutor{
         this.direccion = direccion;
     }
 
-    public boolean isSexo() {
+    public String isSexo() {
         return sexo;
     }
 
-    public void setSexo(boolean sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 

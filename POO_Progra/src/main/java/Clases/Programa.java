@@ -8,15 +8,16 @@ package Clases;
 public class Programa{
     private String nombre;
     private String horario;
-    private float duracion;
+    private int duracion;
     private String genero;
     private Locutor locutor;
     private PlayList playlist;
 
-        public Programa(String nombre, String horario, String genero) {
+        public Programa(String nombre, String horario,int duracion, String genero) {
             this.nombre = nombre;
             this.horario = horario;
             this.genero = genero;
+            this.duracion=duracion;
         }
 
     
@@ -58,7 +59,7 @@ public class Programa{
         return duracion;
     }
 
-    public void setDuracion(float duracion) {
+    public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
 
