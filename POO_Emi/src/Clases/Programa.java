@@ -12,7 +12,10 @@ public class Programa{
     private String genero;
     private Locutor locutor;
     private PlayList playlist;
-
+         public Programa()
+         {
+             
+         }
         public Programa(String nombre, String horario,int duracion, String genero,Locutor locu) {
             this.nombre = nombre;
             this.horario = horario;
@@ -56,7 +59,7 @@ public class Programa{
         this.nombre = nombre;
     }
 
-    public float getDuracion() {
+    public int getDuracion() {
         return duracion;
     }
 

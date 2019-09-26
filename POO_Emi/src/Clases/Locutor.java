@@ -19,13 +19,14 @@ public class Locutor{
     private String sexo;
     private String fechaNacimiento;
 
-     public Locutor(String identificacion, String nombre, String telefono, String direccion, String sexo, String fechaNacimiento) {
+     public Locutor(String identificacion, String nombre, String telefono, String direccion, String sexo, String fechaNacimiento,String correo) {
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
         this.sexo = sexo;
         this.fechaNacimiento = fechaNacimiento;
+        this.correo=correo;
      }
      public Locutor() {
 
