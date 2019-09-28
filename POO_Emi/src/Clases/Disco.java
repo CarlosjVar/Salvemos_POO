@@ -1,12 +1,15 @@
 package Clases;
+import java.util.ArrayList;
 
 
 public class Disco {
-        private String nombre;
+    private String nombre;
     private String cantante;
     private int AnoEdicion;
     private String direccion;
     private String genero;
+    private ArrayList <Cancion> canciones;
+    
 
     @Override
     public String toString() {
@@ -20,6 +23,7 @@ public class Disco {
         this.direccion = direccion;
         this.genero = genero;
         this.imagen = imagen;
+        this.canciones=new ArrayList <Cancion>();
     }
 
     public String getNombre() {
@@ -70,4 +74,11 @@ public class Disco {
         this.imagen = imagen;
     }
     private String imagen;
+        public void addSong(Cancion song)
+{
+    this.canciones.add(song);
 }
+}
+
+
+
