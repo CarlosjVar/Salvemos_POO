@@ -1,6 +1,13 @@
 package Clases;
 
 public class Cancion {
+
+    public Cancion(String nombre, float duracion, String cantante, String generoMus) {
+        this.nombre = nombre;
+        this.duracion = duracion;
+        this.cantante = cantante;
+        this.generoMus = generoMus;
+    }
     protected String nombre;
     protected float duracion;
     protected String cantante;
