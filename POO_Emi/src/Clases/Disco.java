@@ -13,7 +13,7 @@ public class Disco {
 
     @Override
     public String toString() {
-        return "Disco{" + "nombre=" + nombre + ", cantante=" + cantante + ", AnoEdicion=" + AnoEdicion + ", direccion=" + direccion + ", genero=" + genero + ", imagen=" + imagen + '}';
+        return "Disco{" + "nombre=" + nombre + ", cantante=" + cantante + ", AnoEdicion=" + AnoEdicion + ", direccion=" + direccion + ", genero=" + genero + '}';
     }
 
     public Disco(String nombre, String cantante, int AnoEdicion, String direccion, String genero, String imagen) {
@@ -23,6 +23,14 @@ public class Disco {
         this.direccion = direccion;
         this.genero = genero;
         this.imagen = imagen;
+        this.canciones=new ArrayList <Cancion>();
+    }
+    public Disco(String nombre, String cantante, int AnoEdicion, String direccion, String genero) {
+        this.nombre = nombre;
+        this.cantante = cantante;
+        this.AnoEdicion = AnoEdicion;
+        this.direccion = direccion;
+        this.genero = genero;
         this.canciones=new ArrayList <Cancion>();
     }
 

@@ -72,6 +72,10 @@ private static Radioemisora emisora = null;
         return pogo;
         
     }
+    public static void addDisk(Disco disco)
+    {
+        emisora.agregatDisco(disco);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -122,6 +126,8 @@ private static Radioemisora emisora = null;
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
 
@@ -362,6 +368,11 @@ private static Radioemisora emisora = null;
         jMenu1.add(jMenuItem4);
 
         jMenuItem5.setText("Agregar cancion");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem5);
 
         jMenuBar1.add(jMenu1);
@@ -385,12 +396,34 @@ private static Radioemisora emisora = null;
         jMenu3.add(jMenuItem7);
 
         jMenuItem8.setText("Modificar Album");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem8);
 
         jMenuItem9.setText("Modificar Cancion");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem9);
 
         jMenuBar1.add(jMenu3);
+
+        jMenu5.setText("Album");
+
+        jMenuItem10.setText("Agregar Canciones");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem10);
+
+        jMenuBar1.add(jMenu5);
 
         jMenu2.setText("Consultas");
         jMenuBar1.add(jMenu2);
@@ -482,8 +515,22 @@ private static Radioemisora emisora = null;
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-        AgregarPrograma prog= new AgregarPrograma();
-        prog.setVisible(true);
+        if(emisora!=null)
+        {
+            if(emisora.getLocus().isEmpty())
+            {
+                JOptionPane.showMessageDialog(null, "Primero debe crear al menos un locutor");
+            }
+            else
+            {
+            AgregarPrograma prog= new AgregarPrograma();
+            prog.setVisible(true);
+            }
+        }
+        else
+        {
+               JOptionPane.showMessageDialog(null, "No existe radioemisora"); 
+        }
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
@@ -535,6 +582,7 @@ private static Radioemisora emisora = null;
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
@@ -576,6 +624,32 @@ private static Radioemisora emisora = null;
             }
         }
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        if(emisora==null)
+        {
+            JOptionPane.showMessageDialog(null, "No existe radioemisora");
+        }
+        else
+        {
+            agregarCancion AC=new agregarCancion();
+            AC.setVisible(true);
+            
+        }
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -643,8 +717,10 @@ private static Radioemisora emisora = null;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
