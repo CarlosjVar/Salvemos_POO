@@ -1,16 +1,16 @@
 package Clases;
 
 public class Cancion {
-    protected string nombre;
+    protected String nombre;
     protected float duracion;
-    protected string cantante;
-    protected string generoMus;
+    protected String cantante;
+    protected String generoMus;
 
-        public string getNombre() {
+        public String getNombre() {
             return nombre;
         }
 
-        public void setNombre(string nombre) {
+        public void setNombre(String nombre) {
             this.nombre = nombre;
         }
 
@@ -22,19 +22,19 @@ public class Cancion {
             this.duracion = duracion;
         }
 
-        public string getCantante() {
+        public String getCantante() {
             return cantante;
         }
 
-        public void setCantante(string cantante) {
+        public void setCantante(String cantante) {
             this.cantante = cantante;
         }
 
-        public string getGeneroMus() {
+        public String getGeneroMus() {
             return generoMus;
         }
 
-        public void setGeneroMus(string generoMus) {
+        public void setGeneroMus(String generoMus) {
             this.generoMus = generoMus;
         }
 

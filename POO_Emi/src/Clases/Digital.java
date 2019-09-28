@@ -1,22 +1,22 @@
 package Clases;
 
 public class Digital extends Cancion {
-    private string album;
-    private string path;
+    private String album;
+    private String path;
 
-        public string getAlbum() {
+        public String getAlbum() {
             return album;
         }
 
-        public void setAlbum(string album) {
+        public void setAlbum(String album) {
             this.album = album;
         }
 
-        public string getPath() {
+        public String getPath() {
             return path;
         }
 
-        public void setPath(string path) {
+        public void setPath(String path) {
             this.path = path;
         }
 
