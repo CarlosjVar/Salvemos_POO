@@ -54,7 +54,7 @@ public class ExcelMain {
         }
     }
         
-        public static Cancion[] lecturaAlbumExcel(String path) throws IOException{
+        public static Digital[] lecturaAlbumExcel(String path) throws IOException{
         Digital[] ana = null;
             try {
                 

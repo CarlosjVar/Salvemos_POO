@@ -3,7 +3,16 @@ package Clases;
 public class Digital extends Cancion {
     private String album;
     private String path;
-
+    public Digital(String nombre,String autor,float duracion,String genero,String album,String path)
+    {
+        super(nombre,duracion,autor,genero);
+        this.path=path;
+        this.album=album;
+    }
+    public Digital()
+    {
+        
+    }
         public String getAlbum() {
             return album;
         }
