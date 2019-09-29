@@ -58,6 +58,19 @@ private static Radioemisora emisora = null;
         } 
         return loco;
     }
+    public static Disco getDisk(String disco)
+    {
+        ArrayList <Disco> listadisco= emisora.getDisc();
+        Disco loco=new Disco();
+        for(int i = 0; i < listadisco.size(); i++)
+        {
+            if(listadisco.get(i).getNombre()==disco)
+            {
+                loco=listadisco.get(i);
+            }
+        } 
+        return loco;
+    }
     public static Programa getProg(String nombre)
     {
         ArrayList <Programa>listp=emisora.getProg();
@@ -635,6 +648,22 @@ private static Radioemisora emisora = null;
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
+        if(emisora!=null)
+        {
+            if(emisora.getDisc().isEmpty())
+            {
+                JOptionPane.showMessageDialog(null, "No existen discos a los que agregar canciones");
+            }
+            else
+            {
+                agregarCancion AG=new agregarCancion();
+                AG.setVisible(true);
+            }
+            }
+        else
+        {
+           JOptionPane.showMessageDialog(null, "No existe radioemisora a la que agregar canciones"); 
+        }
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -645,8 +674,7 @@ private static Radioemisora emisora = null;
         }
         else
         {
-            agregarCancion AC=new agregarCancion();
-            AC.setVisible(true);
+
             
         }
     }//GEN-LAST:event_jMenuItem5ActionPerformed

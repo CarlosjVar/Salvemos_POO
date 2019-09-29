@@ -33,6 +33,10 @@ public class Disco {
         this.genero = genero;
         this.canciones=new ArrayList <Cancion>();
     }
+    public Disco()
+    {
+        
+    }
 
     public String getNombre() {
         return nombre;

@@ -55,7 +55,7 @@ public class ExcelMain {
     }
         
         public static Cancion[] lecturaAlbumExcel(String path) throws IOException{
-        Cancion[] ana = null;
+        Digital[] ana = null;
             try {
                 
             Digital cancion=new Digital();
@@ -64,28 +64,22 @@ public class ExcelMain {
             XSSFWorkbook documento= new XSSFWorkbook(archivo);
             XSSFSheet pagina= documento.getSheetAt(0);
             int numFilas=pagina.getLastRowNum();
-            ana=new Cancion[numFilas];
+            ana=new Digital[numFilas];
             for(int contFila=0; contFila<=numFilas; contFila++)
             {
                 Row fila=pagina.getRow(contFila);
                 Cell celda;
                 celda = fila.getCell(0);
-                System.out.println(celda);
                 cancion.setAlbum(celda.getStringCellValue());
                 celda = fila.getCell(1);
-                System.out.println(celda);
                 cancion.setNombre(celda.getStringCellValue());
                 celda = fila.getCell(2);
-                System.out.println(celda);
                 cancion.setCantante(celda.getStringCellValue());
                 celda = fila.getCell(3);
-                System.out.println(celda);
                 cancion.setDuracion((float)celda.getNumericCellValue());
                 celda = fila.getCell(4);
-                System.out.println(celda);
                 cancion.setGeneroMus(celda.getStringCellValue());
                 celda = fila.getCell(5);
-                System.out.println(celda);
                 cancion.setPath(celda.getStringCellValue());
                 if(contFila<numFilas)
                     ana[contFila]=cancion;

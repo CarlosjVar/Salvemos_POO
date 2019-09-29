@@ -13,6 +13,10 @@ public class Cancion {
     protected String cantante;
     protected String generoMus;
 
+    Cancion() {
+        
+    }
+
         public String getNombre() {
             return nombre;
         }
