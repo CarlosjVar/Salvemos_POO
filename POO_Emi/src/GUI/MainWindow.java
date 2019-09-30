@@ -86,6 +86,20 @@ private static Radioemisora emisora = null;
         return pogo;
         
     }
+        public static Digital getCanc(String nombre)
+    {
+        ArrayList <Digital>listp=emisora.getDigitales();
+        Digital pogo=new Digital();
+        for(int i = 0; i < listp.size(); i++)
+        {
+            if(listp.get(i).getNombre()==nombre)
+            {
+                pogo=listp.get(i);
+            }
+        }
+        return pogo;
+        
+    }
     public static void addDisk(Disco disco)
     {
         emisora.agregatDisco(disco);
@@ -607,6 +621,22 @@ private static Radioemisora emisora = null;
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         // TODO add your handling code here:
+        if(emisora!=null)
+        {
+            if(emisora.getDigitales().isEmpty())
+            {
+                JOptionPane.showMessageDialog(null, "No existen canciones digitales que modificar");
+            }
+            else
+            {
+                ModificarCancion MC=new ModificarCancion();
+                MC.setVisible(true);
+            }
+            }
+        else
+        {
+           JOptionPane.showMessageDialog(null, "No existe radioemisora"); 
+        }
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
