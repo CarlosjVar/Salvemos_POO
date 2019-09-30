@@ -738,7 +738,7 @@ private static Radioemisora emisora = null;
         }
         else
         {
-            agregarCancion AC=new agregarCancion();
+            AgregarDigital AC=new AgregarDigital();
             AC.setVisible(true);
         }
     }//GEN-LAST:event_jMenuItem5ActionPerformed

@@ -3,6 +3,14 @@ import java.util.ArrayList;
 
 
 public class Disco {
+
+    public ArrayList<Cancion> getCanciones() {
+        return canciones;
+    }
+
+    public void setCanciones(ArrayList<Cancion> canciones) {
+        this.canciones = canciones;
+    }
     private String nombre;
     private String cantante;
     private int AnoEdicion;
