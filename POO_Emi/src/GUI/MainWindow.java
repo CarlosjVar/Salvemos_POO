@@ -122,6 +122,9 @@ private static Radioemisora emisora = null;
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
         SelecProg = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -142,6 +145,10 @@ private static Radioemisora emisora = null;
         jMenu5 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -303,6 +310,12 @@ private static Radioemisora emisora = null;
         jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel9.setText("Frecuencia:");
 
+        jMenuItem11.setText("jMenuItem11");
+
+        jMenuItem13.setText("jMenuItem13");
+
+        jMenuItem15.setText("jMenuItem15");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("RadioEmisora");
         setName("Ventana"); // NOI18N
@@ -333,7 +346,7 @@ private static Radioemisora emisora = null;
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Cancion", "Autor", "Duracion", "Genero"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -408,7 +421,7 @@ private static Radioemisora emisora = null;
         });
         jMenu3.add(jMenuItem7);
 
-        jMenuItem8.setText("Modificar Album");
+        jMenuItem8.setText("Modificar Disco");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem8ActionPerformed(evt);
@@ -439,6 +452,24 @@ private static Radioemisora emisora = null;
         jMenuBar1.add(jMenu5);
 
         jMenu2.setText("Consultas");
+
+        jMenuItem12.setText("Lista de locutores");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem12);
+
+        jMenuItem14.setText("Lista de programas");
+        jMenu2.add(jMenuItem14);
+
+        jMenuItem16.setText("jMenuItem16");
+        jMenu2.add(jMenuItem16);
+
+        jMenuItem17.setText("jMenuItem17");
+        jMenu2.add(jMenuItem17);
+
         jMenuBar1.add(jMenu2);
 
         jMenu4.setText("Playlist");
@@ -451,18 +482,19 @@ private static Radioemisora emisora = null;
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(SelecProg, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71)
-                        .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(114, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(SelecProg, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(71, 71, 71)
+                                .addComponent(jButton1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -473,9 +505,9 @@ private static Radioemisora emisora = null;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SelecProg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGap(64, 64, 64)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         SelecProg.getAccessibleContext().setAccessibleDescription("");
@@ -577,7 +609,9 @@ private static Radioemisora emisora = null;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ArrayList <Programa> progL=emisora.getProg();
+       if(!(emisora==null))
+       {
+       ArrayList <Programa> progL=emisora.getProg();
        Programa progra=new Programa();
        for(int i = 0; i < progL.size(); i++)
                 {
@@ -590,12 +624,26 @@ private static Radioemisora emisora = null;
        if(progra.getPlaylist()==null)
        {
            JOptionPane.showMessageDialog(null, "Aún no existe una playlist asociada al programa, por favor genere una");
-       }        
+       } 
+       }
+       else
+       {
+          JOptionPane.showMessageDialog(null, "No existe una radioemisora"); 
+       }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
         
+        if(emisora==null)
+        {
+          JOptionPane.showMessageDialog(null, "No existen Radioemisora");  
+        }
+        else
+        {
+          AgregarDisco AG=new AgregarDisco();
+          AG.setVisible(true);
+        }
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
@@ -644,6 +692,22 @@ private static Radioemisora emisora = null;
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
+        if(emisora!=null)
+        {
+            if(emisora.getDisc().isEmpty())
+            {
+                JOptionPane.showMessageDialog(null, "No existen discos que modificar");
+            }
+            else
+            {
+                ModificarDisco AG=new ModificarDisco();
+                AG.setVisible(true);
+            }
+            }
+        else
+        {
+           JOptionPane.showMessageDialog(null, "No existe radioemisora"); 
+        }
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
@@ -674,10 +738,14 @@ private static Radioemisora emisora = null;
         }
         else
         {
-
-            
+            agregarCancion AC=new agregarCancion();
+            AC.setVisible(true);
         }
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -749,6 +817,13 @@ private static Radioemisora emisora = null;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
