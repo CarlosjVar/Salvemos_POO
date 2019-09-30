@@ -100,25 +100,6 @@ private static Radioemisora emisora = null;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        RegistRadio = new javax.swing.JDialog();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        Nombre = new javax.swing.JTextField();
-        Url = new javax.swing.JTextField();
-        DirF = new javax.swing.JTextField();
-        Frec = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        ErNomb = new javax.swing.JLabel();
-        ErrDir = new javax.swing.JLabel();
-        ErrUrl = new javax.swing.JLabel();
-        ErrFrec = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        ErNomb1 = new javax.swing.JLabel();
-        ErrDir1 = new javax.swing.JLabel();
-        ErrUrl1 = new javax.swing.JLabel();
-        ErrFrec1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -129,6 +110,9 @@ private static Radioemisora emisora = null;
         lista = new javax.swing.JDialog();
         jScrollPane2 = new javax.swing.JScrollPane();
         infol = new javax.swing.JTable();
+        progras = new javax.swing.JDialog();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        infop = new javax.swing.JTable();
         SelecProg = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -155,155 +139,6 @@ private static Radioemisora emisora = null;
         jMenuItem17 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem18 = new javax.swing.JMenuItem();
-
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel2.setText("Nombre de Radioemisora:");
-
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel5.setText("Frecuencia:");
-
-        Nombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreActionPerformed(evt);
-            }
-        });
-
-        Url.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UrlActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Crear");
-        jButton2.setToolTipText("");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        ErNomb.setForeground(new java.awt.Color(255, 51, 51));
-
-        ErrDir.setForeground(new java.awt.Color(255, 51, 51));
-
-        ErrUrl.setForeground(new java.awt.Color(255, 51, 51));
-
-        ErrFrec.setForeground(new java.awt.Color(255, 51, 51));
-
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel7.setText("Dirección física:");
-
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel8.setText("Dirección URL");
-
-        jButton3.setText("Crear");
-        jButton3.setToolTipText("");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        ErNomb1.setForeground(new java.awt.Color(255, 51, 51));
-
-        ErrDir1.setForeground(new java.awt.Color(255, 51, 51));
-
-        ErrUrl1.setForeground(new java.awt.Color(255, 51, 51));
-
-        ErrFrec1.setForeground(new java.awt.Color(255, 51, 51));
-
-        javax.swing.GroupLayout RegistRadioLayout = new javax.swing.GroupLayout(RegistRadio.getContentPane());
-        RegistRadio.getContentPane().setLayout(RegistRadioLayout);
-        RegistRadioLayout.setHorizontalGroup(
-            RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RegistRadioLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Url)
-                    .addComponent(DirF)
-                    .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(RegistRadioLayout.createSequentialGroup()
-                        .addComponent(Frec, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ErrFrec, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ErNomb, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ErrDir, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ErrUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistRadioLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(27, 27, 27))
-            .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(RegistRadioLayout.createSequentialGroup()
-                    .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(RegistRadioLayout.createSequentialGroup()
-                            .addGap(164, 300, Short.MAX_VALUE)
-                            .addComponent(ErrFrec1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(ErNomb1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ErrDir1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ErrUrl1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistRadioLayout.createSequentialGroup()
-                            .addGap(0, 0, Short.MAX_VALUE)
-                            .addComponent(jButton3)))
-                    .addGap(0, 35, Short.MAX_VALUE)))
-        );
-        RegistRadioLayout.setVerticalGroup(
-            RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RegistRadioLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ErNomb, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DirF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ErrDir, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Url, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8))
-                    .addComponent(ErrUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegistRadioLayout.createSequentialGroup()
-                        .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Frec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                        .addComponent(jButton2))
-                    .addGroup(RegistRadioLayout.createSequentialGroup()
-                        .addComponent(ErrFrec, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(RegistRadioLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(ErNomb1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(ErrDir1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(ErrUrl1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(RegistRadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(RegistRadioLayout.createSequentialGroup()
-                            .addGap(20, 20, 20)
-                            .addComponent(jButton3))
-                        .addComponent(ErrFrec1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel6.setText("Nombre de Radioemisora:");
@@ -361,6 +196,33 @@ private static Radioemisora emisora = null;
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
                 .addContainerGap())
+        );
+
+        infop.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "Horario", "Duracion", "Genero", "Locutor"
+            }
+        ));
+        jScrollPane3.setViewportView(infop);
+
+        javax.swing.GroupLayout prograsLayout = new javax.swing.GroupLayout(progras.getContentPane());
+        progras.getContentPane().setLayout(prograsLayout);
+        prograsLayout.setHorizontalGroup(
+            prograsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE)
+        );
+        prograsLayout.setVerticalGroup(
+            prograsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, prograsLayout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -509,6 +371,11 @@ private static Radioemisora emisora = null;
         jMenu2.add(jMenuItem12);
 
         jMenuItem14.setText("Lista de programas");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem14);
 
         jMenuItem16.setText("jMenuItem16");
@@ -855,22 +722,35 @@ private static Radioemisora emisora = null;
         }
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void UrlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UrlActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UrlActionPerformed
-
-    private void NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NombreActionPerformed
+        if (!(emisora==null))
+        {
+            if(!emisora.getProg().isEmpty())
+            {
+            
+            DefaultTableModel model = (DefaultTableModel) infop.getModel();
+            model.setRowCount(0);
+            ArrayList <Programa> progras=emisora.getProg();
+            Programa prograp;
+            for(int i = 0; i < progras.size(); i++)
+              {
+                prograp=progras.get(i);
+                model.addRow(new Object[]{prograp.getNombre(),prograp.getHorario(),prograp.getDuracion(),prograp.getGenero(),prograp.getLocutor().getNombre()});
+              }
+            lista.setVisible(true);
+            lista.setSize(800,500);
+            }  
+            else
+            {
+               JOptionPane.showMessageDialog(null, "No existen programas"); 
+            }
+       }
+       else
+        {
+          JOptionPane.showMessageDialog(null, "No existe radioemisora");  
+        }
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -908,32 +788,14 @@ private static Radioemisora emisora = null;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField DirF;
-    private javax.swing.JLabel ErNomb;
-    private javax.swing.JLabel ErNomb1;
-    private javax.swing.JLabel ErrDir;
-    private javax.swing.JLabel ErrDir1;
-    private javax.swing.JLabel ErrFrec;
-    private javax.swing.JLabel ErrFrec1;
-    private javax.swing.JLabel ErrUrl;
-    private javax.swing.JLabel ErrUrl1;
-    private javax.swing.JTextField Frec;
-    private javax.swing.JTextField Nombre;
-    private javax.swing.JDialog RegistRadio;
     private javax.swing.JComboBox<String> SelecProg;
-    private javax.swing.JTextField Url;
     private javax.swing.JTable infol;
+    private javax.swing.JTable infop;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -961,7 +823,9 @@ private static Radioemisora emisora = null;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JDialog lista;
+    private javax.swing.JDialog progras;
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 }
