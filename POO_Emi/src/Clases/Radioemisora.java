@@ -110,25 +110,25 @@ public class Radioemisora {
         }
         
         public static PlayList genplay(String gen,Programa progra){
-            System.out.println(gen);
+            //System.out.println(gen);
             PlayList playlist = new PlayList();
             ArrayList <Cancion> lisCanciones = new ArrayList <Cancion>();
             float duraActual=0.0f;
             while(duraActual<=progra.getDuracion()){
                 int elec1 = (int)(Math.random()*((2-1)+1))+1;
                 if(elec1==1){
-                    System.out.println("entro 1");
+                    //System.out.println("entro 1");
                     ArrayList <Digital> digi=MainWindow.getEmisora().getDigitales();
                     for(int i=0; i<digi.size();i++){
-                        System.out.print("el i es ");
-                        System.out.print(digi.get(i));
+                        //System.out.print("el i es ");
+                        //System.out.print(digi.get(i));
                     }
                     int elec2 = (int)(Math.random()*(((digi.size()-1)-0)+1))+0;
-                    System.out.println(elec2);
-                    System.out.println(digi.get(elec2).nombre);
+                    //System.out.println(elec2);
+                    //System.out.println(digi.get(elec2).nombre);
                     duraActual=duraActual+(digi.get(elec2).getDuracion());
-                    if(duraActual<=progra.getDuracion()&&(digi.get(elec2).getGeneroMus() == gen)){
-                        System.out.println("Entro");
+                    if(duraActual<=progra.getDuracion()&&(digi.get(elec2).getGeneroMus() == null ? gen == null : digi.get(elec2).getGeneroMus().equals(gen))){
+                        //System.out.println("Entro");
                         lisCanciones.add(digi.get(elec2));
                     }   
                     else
@@ -137,18 +137,18 @@ public class Radioemisora {
                         break;
                 }
                 else{
-                    System.out.println("entro 2");
+                    //System.out.println("entro 2");
                     ArrayList <Disco> disco=MainWindow.getEmisora().getDisc();
                     int elec3 = (int)(Math.random()*(((disco.size()-1)-0)+1))+0;
                     ArrayList <Cancion>discEleg=disco.get(elec3).getCanciones();
-                    System.out.println(elec3);
-                    System.out.println(disco.get(elec3).getNombre());
+                    //System.out.println(elec3);
+                    //System.out.println(disco.get(elec3).getNombre());
                     int elec4 = (int)(Math.random()*(((discEleg.size()-1)-0)+1))+0;
-                    System.out.println(elec4);
-                    System.out.println(discEleg.get(elec4).getNombre());
+                    //System.out.println(elec4);
+                    //System.out.println(discEleg.get(elec4).getNombre());
                     duraActual=duraActual+(discEleg.get(elec4).getDuracion());
-                    if(duraActual<=progra.getDuracion()&&discEleg.get(elec4).getGeneroMus()==gen){
-                        System.out.println("Entro del  2");
+                    if(duraActual<=progra.getDuracion()&&(discEleg.get(elec4).getGeneroMus() == null ? gen == null : discEleg.get(elec4).getGeneroMus().equals(gen))){
+                        //System.out.println("Entro del  2");
                         lisCanciones.add(discEleg.get(elec4));
                     }
                     else
