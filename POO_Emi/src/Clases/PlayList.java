@@ -1,5 +1,8 @@
 package Clases;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+import javax.swing.JOptionPane;
 
 public class PlayList {
     private float duracion;
@@ -40,5 +43,19 @@ public class PlayList {
         @Override
         public String toString() {
             return "PlayList{" + "duracion=" + duracion + ", nombre=" + nombre +'}';
+        }
+        public void enviarCorreo(){
+            Timer tiempo=new Timer();
+            
+            TimerTask tarea= new TimerTask(){
+                @Override
+                public void run() {
+                    JOptionPane.showMessageDialog(null, "Se termino la playlist y el correo fue enviado"); 
+
+                }
+            };
+            
+            long delay=(long)(getDuracion()*60000);
+            tiempo.schedule(tarea, delay);
         }
     }
