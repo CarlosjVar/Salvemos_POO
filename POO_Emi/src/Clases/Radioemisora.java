@@ -109,21 +109,21 @@ public class Radioemisora {
             return "Radioemisora{" + "nombre=" + nombre + ", direccionFi=" + direccionFi + ", frecuencia=" + frecuencia + ", URL=" + URL + '}';
         }
         
-        public static ArrayList <Cancion> generarPlaylist(String gen){
-            PlayList playlist;
-            ArrayList <Cancion> lisCanciones=playlist.getCanciones();
+        public static PlayList genplay(String gen,Programa progra){
+            PlayList playlist = new PlayList();
+            ArrayList <Cancion> lisCanciones = new ArrayList <Cancion>();
             float duraActual=0.0f;
-            while(duraActual<=playlist.getDuracion()){
+            while(duraActual<=progra.getDuracion()){
                 int elec1 = (int)(Math.random()*((2-1)+1))+1;
                 if(elec1==1){
                     ArrayList <Digital> digi=MainWindow.getEmisora().getDigitales();
                     int elec2 = (int)(Math.random()*(((digi.size()-1)-0)+1))+0;
                     duraActual=duraActual+(digi.get(elec2).getDuracion());
-                    if(duraActual<=playlist.getDuracion()&&(digi.get(elec2).getGeneroMus() == null ? gen == null : digi.get(elec2).getGeneroMus().equals(gen)))
+                    if(duraActual<=progra.getDuracion()&&(digi.get(elec2).getGeneroMus() == null ? gen == null : digi.get(elec2).getGeneroMus().equals(gen)))
                         lisCanciones.add(digi.get(elec2));
                     else
                       duraActual=duraActual-(digi.get(elec2).getDuracion());  
-                    if(duraActual>=playlist.getDuracion()-5&&duraActual<=playlist.getDuracion())
+                    if(duraActual>=progra.getDuracion()-5&&duraActual<=progra.getDuracion())
                         break;
                 }
                 else{
@@ -136,19 +136,19 @@ public class Radioemisora {
                     ArrayList <Cancion>discEleg=disco.get(elec3).getCanciones();
                     int elec4 = (int)(Math.random()*(((discEleg.size()-1)-0)+1))+0;
                     duraActual=duraActual+(discEleg.get(elec4).getDuracion());
-                    if(duraActual<=playlist.getDuracion())
+                    if(duraActual<=progra.getDuracion())
                         lisCanciones.add(discEleg.get(elec4));
                     else
                       duraActual=duraActual-(discEleg.get(elec4).getDuracion());  
-                    if(duraActual>=playlist.getDuracion()-5&&duraActual<=playlist.getDuracion())
+                    if(duraActual>=progra.getDuracion()-5&&duraActual<=progra.getDuracion())
                         break;
                 }
   
             }
-            return lisCanciones;
-        }
-        public static void main(String[] args){
-            
+            playlist.setCanciones(lisCanciones);
+            playlist.setDuracion(duraActual);
+            playlist.setNombre("playlist");
+            return playlist;
         }
 }
     

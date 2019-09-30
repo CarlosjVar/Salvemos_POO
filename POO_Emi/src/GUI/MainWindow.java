@@ -16,6 +16,7 @@ import Clases.Radioemisora;
 import javax.swing.JOptionPane;
 import Clases.*;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 
 
@@ -128,7 +129,7 @@ private static Radioemisora emisora = null;
         SelecProg = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -150,6 +151,7 @@ private static Radioemisora emisora = null;
         jMenuItem16 = new javax.swing.JMenuItem();
         jMenuItem17 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem18 = new javax.swing.JMenuItem();
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Nombre de Radioemisora:");
@@ -338,7 +340,7 @@ private static Radioemisora emisora = null;
 
         jLabel1.setText("Programas disponibles");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -349,7 +351,7 @@ private static Radioemisora emisora = null;
                 "Cancion", "Autor", "Duracion", "Genero"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabla);
 
         jButton1.setText("Play");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -393,7 +395,7 @@ private static Radioemisora emisora = null;
         });
         jMenu1.add(jMenuItem4);
 
-        jMenuItem5.setText("Agregar cancion");
+        jMenuItem5.setText("Agregar cancion digital");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
@@ -441,7 +443,7 @@ private static Radioemisora emisora = null;
 
         jMenu5.setText("Album");
 
-        jMenuItem10.setText("Agregar Canciones");
+        jMenuItem10.setText("Agregar Canciones al album");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem10ActionPerformed(evt);
@@ -473,6 +475,15 @@ private static Radioemisora emisora = null;
         jMenuBar1.add(jMenu2);
 
         jMenu4.setText("Playlist");
+
+        jMenuItem18.setText("Generar playlist");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem18);
+
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -624,7 +635,20 @@ private static Radioemisora emisora = null;
        if(progra.getPlaylist()==null)
        {
            JOptionPane.showMessageDialog(null, "Aún no existe una playlist asociada al programa, por favor genere una");
-       } 
+       }
+       else
+       {
+          DefaultTableModel model = (DefaultTableModel) tabla.getModel();
+           model.setRowCount(0);
+           ArrayList <Cancion> canciones=progra.getPlaylist().getCanciones();
+           Cancion cancionp;
+           for(int i = 0; i < canciones.size(); i++)
+            {
+              cancionp=canciones.get(i);
+              model.addRow(new Object[]{cancionp.getNombre(),cancionp.getCantante(),cancionp.getDuracion(),cancionp.getGeneroMus()});
+            }
+       }
+       
        }
        else
        {
@@ -747,6 +771,35 @@ private static Radioemisora emisora = null;
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        // TODO add your handling code here:
+        if(!(emisora==null))
+        {
+            if(emisora.getProg().isEmpty())
+            {
+                JOptionPane.showMessageDialog(null, "No existen programas");
+            }
+            else
+            {
+            if(emisora.getDigitales().isEmpty()&&emisora.getDisc().isEmpty())
+            {
+            JOptionPane.showMessageDialog(null, "No existe canciones con las cuales crear una playlist");
+            }
+            else
+            {
+            Programa progra=MainWindow.getProg(SelecProg.getSelectedItem().toString());
+            PlayList play=emisora.genplay(progra.getGenero(),progra);
+            progra.setPlaylist(play);
+            JOptionPane.showMessageDialog(null, "Se ha generado la playlist");
+            }
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "No existe radioemisora");
+        }
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -824,6 +877,7 @@ private static Radioemisora emisora = null;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -833,6 +887,6 @@ private static Radioemisora emisora = null;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 }

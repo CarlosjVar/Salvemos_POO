@@ -205,7 +205,7 @@ public class Registroemisora extends javax.swing.JFrame {
         else if(!validacion.isValid(Url.getText()))
         {
             ErrUrl.setText("*");
-            JOptionPane.showMessageDialog(null, "Ingrese una dirección url válida (https.//foo.com)");
+            JOptionPane.showMessageDialog(null, "Ingrese una dirección url válida (https://foo.com)");
 
         }
         else if(Nombre.getText().isEmpty())

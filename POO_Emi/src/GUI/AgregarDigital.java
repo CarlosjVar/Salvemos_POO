@@ -257,7 +257,7 @@ public class AgregarDigital extends javax.swing.JFrame {
                     radio.agregarDigital(x);
                     
                 }
-                JOptionPane.showMessageDialog(null, "Se han cargado las canciones al disco ");
+                JOptionPane.showMessageDialog(null, "Se han cargado las canciones digitales ");
                 this.dispose();
             }  catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Se han encontrado problemas con el archivo");

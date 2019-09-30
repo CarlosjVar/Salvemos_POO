@@ -3,18 +3,18 @@ import java.util.ArrayList;
 
 public class PlayList {
     private float duracion;
-    private string  nombre;
+    private String  nombre;
     private ArrayList <Cancion> canciones;
 
-        public PlayList(string nombre) {
-            this.nombre = nombre;
+        public PlayList() {
+            
         }
 
-        public string getNombre() {
+        public String getNombre() {
             return nombre;
         }
 
-        public void setNombre(string nombre) {
+        public void setNombre(String nombre) {
             this.nombre = nombre;
         }
         
