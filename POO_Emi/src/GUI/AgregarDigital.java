@@ -37,6 +37,7 @@ public class AgregarDigital extends javax.swing.JFrame {
     private void initComponents() {
 
         archivo = new javax.swing.JFileChooser();
+        img = new javax.swing.JFileChooser();
         jLabel5 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -276,6 +277,19 @@ public class AgregarDigital extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    int returnVal = img.showOpenDialog(this);
+    if (returnVal == JFileChooser.APPROVE_OPTION) {
+        File file = img.getSelectedFile();
+        try {
+          // What to do with the file, e.g. display it in a TextArea
+          String path=file.getPath();
+          jTextField6.setText(path);
+        }  catch (Exception e) { 
+          System.out.println("problem accessing file"+file.getAbsolutePath());
+        }
+    } else {
+        System.out.println("File access cancelled by user.");
+    }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -322,6 +336,7 @@ public class AgregarDigital extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFileChooser archivo;
+    private javax.swing.JFileChooser img;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

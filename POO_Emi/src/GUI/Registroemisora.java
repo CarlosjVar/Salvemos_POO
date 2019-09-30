@@ -8,6 +8,8 @@ import org.apache.commons.validator.UrlValidator;
 import org.apache.oro.text.perl.Perl5Util;
 import Clases.Radioemisora;
 import javax.swing.JOptionPane;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 /**
  *
  * @author carlo
@@ -181,7 +183,7 @@ public class Registroemisora extends javax.swing.JFrame {
             ErrDir.setText("");
             ErrFrec.setText("");
             try
-            {
+            {             
                 float f = Float.valueOf(Frec.getText()).floatValue();
                 Radioemisora radio=new Radioemisora(Nombre.getText(),DirF.getText(),f,Url.getText());
                 this.dispose();
