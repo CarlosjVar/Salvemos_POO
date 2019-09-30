@@ -19,7 +19,7 @@ public class ExcelMain {
         Cancion[] ana = null;
             try {
                 
-            Cancion cancion=new Cancion();
+
             
             FileInputStream archivo = new FileInputStream(new File(path));
             XSSFWorkbook documento= new XSSFWorkbook(archivo);
@@ -28,6 +28,7 @@ public class ExcelMain {
             ana=new Cancion[numFilas];
             for(int contFila=0; contFila<=numFilas; contFila++)
             {
+                Cancion cancion=new Cancion();
                 Row fila=pagina.getRow(contFila);
                 Cell celda;
                 celda = fila.getCell(0);
@@ -58,7 +59,7 @@ public class ExcelMain {
         Digital[] ana = null;
             try {
                 
-            Digital cancion=new Digital();
+
             
             FileInputStream archivo = new FileInputStream(new File(path));
             XSSFWorkbook documento= new XSSFWorkbook(archivo);
@@ -68,6 +69,7 @@ public class ExcelMain {
             for(int contFila=0; contFila<=numFilas; contFila++)
             {
                 Row fila=pagina.getRow(contFila);
+                Digital cancion=new Digital();
                 Cell celda;
                 celda = fila.getCell(0);
                 cancion.setAlbum(celda.getStringCellValue());
@@ -85,18 +87,15 @@ public class ExcelMain {
                     ana[contFila]=cancion;
                 System.out.println("\n");
             }
-            return ana;
-        } catch (FileNotFoundException ex) {
+            for(int i = 0; i < ana.length; i++) {
+            System.out.print(ana[i].getNombre());
+ 
+            }
+            return ana;                 
+            }
+            catch (FileNotFoundException ex) {
             System.out.println("Archivo no pudo ser cargado");
             return ana;
         }
-    }
-       
-       public static void main(String[] args) throws IOException {
-       Cancion[] canciones;
-       canciones=lecturaAlbumExcel("C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Salvemos_POO\\POO_Emi\\src\\Clases\\Albumes.xlsx");
-       if(canciones!=null)//Se necesita if de si el array es vacio o no como en este ejemplo
-        System.out.print(canciones[0].getNombre());
-       
-        }
+    }   
     }

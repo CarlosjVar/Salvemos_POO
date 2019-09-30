@@ -11,6 +11,7 @@ import Clases.Disco;
 import static Clases.ExcelMain.lecturaAlbumExcel;
 import Clases.Radioemisora;
 import java.io.File;
+import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -249,13 +250,13 @@ public class AgregarDigital extends javax.swing.JFrame {
             try {
                 // What to do with the file, e.g. display it in a TextArea
                 String path=file.getPath();
-                Digital [] canciones = null;
+                Digital [] canciones;
                 canciones=lecturaAlbumExcel(path);    
                 Radioemisora radio=MainWindow.getEmisora();
                 for (int i = 0; i < canciones.length; i++) {
                     // accessing each element of array
                     Digital x = canciones[i];
-                    radio.agregarDigital(x);
+                    radio.agregarDigital(x);                 
                     
                 }
                 JOptionPane.showMessageDialog(null, "Se han cargado las canciones digitales ");
