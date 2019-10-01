@@ -392,10 +392,20 @@ private static Radioemisora emisora = null;
         });
         jMenu2.add(jMenuItem14);
 
-        jMenuItem16.setText("jMenuItem16");
+        jMenuItem16.setText("Canciones por Género");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem16);
 
-        jMenuItem17.setText("jMenuItem17");
+        jMenuItem17.setText("Canciones por Cantante");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem17);
 
         jMenuBar1.add(jMenu2);
@@ -742,7 +752,14 @@ private static Radioemisora emisora = null;
             Programa progra=MainWindow.getProg(SelecProg.getSelectedItem().toString());
             PlayList play=emisora.genplay(progra.getGenero(),progra);
             progra.setPlaylist(play);
-            JOptionPane.showMessageDialog(null, "Se ha generado la playlist");
+            String msjCorreo = "Lista de canciones en la PlayList"+"\n";
+            ArrayList<Cancion> listaCanciones = play.getCanciones();
+            for(int i = 0; i < listaCanciones.size(); i++)
+              {
+                msjCorreo = msjCorreo + (listaCanciones.get(i)).getNombre() + "\n";
+              }
+            String to = (progra.getLocutor()).getCorreo();
+            play.enviarCorreo(to, msjCorreo);
             }
             }
         }
@@ -781,6 +798,15 @@ private static Radioemisora emisora = null;
           JOptionPane.showMessageDialog(null, "No existe radioemisora");  
         }
     }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     /**
      * @param args the command line arguments
