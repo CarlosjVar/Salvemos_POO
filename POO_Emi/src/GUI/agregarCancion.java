@@ -57,7 +57,8 @@ public class agregarCancion extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Agregar Cancion");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jLabel1.setText("Disco");

@@ -61,7 +61,8 @@ public class ModificarCancion extends javax.swing.JFrame {
         ListaCanciones = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Modificar Cancion");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jLabel6.setText("Album");

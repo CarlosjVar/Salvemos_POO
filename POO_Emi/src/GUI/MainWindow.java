@@ -16,6 +16,8 @@ import Clases.Radioemisora;
 import javax.swing.JOptionPane;
 import Clases.*;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -59,6 +61,30 @@ private static Radioemisora emisora = null;
         } 
         return loco;
     }
+    public void enviarCorreo(String to, String msg){
+            Timer tiempo=new Timer();
+            Programa progra= MainWindow.getProg(SelecProg.getSelectedItem().toString());
+            TimerTask tarea= new TimerTask(){
+                @Override
+                public void run() {
+                    String msjCorreo = "Lista de canciones en la PlayList"+"\n";
+                    
+                    ArrayList<Cancion> listaCanciones = progra.getPlaylist().getCanciones();
+                    for(int i = 0; i < listaCanciones.size(); i++)
+                    {
+                    msjCorreo = msjCorreo + (listaCanciones.get(i)).getNombre() + "\n";
+                    }
+                    String to = (progra.getLocutor()).getCorreo();                   
+                    Mailer correoE;
+                    correoE = new Mailer ();
+                    correoE.send(progra.getLocutor().getCorreo(),"Creacion de playlist",msg);                 
+                    
+                }
+            };
+            
+            long delay=(long)(progra.getPlaylist().getDuracion()*60000);
+            tiempo.schedule(tarea, delay);
+        }
     public static Disco getDisk(String disco)
     {
         ArrayList <Disco> listadisco= emisora.getDisc();
@@ -239,7 +265,7 @@ private static Radioemisora emisora = null;
                 .addGap(45, 45, 45))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("RadioEmisora");
         setName("Ventana"); // NOI18N
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -467,6 +493,7 @@ private static Radioemisora emisora = null;
         if (emisora==null)
        {
            Registroemisora ventR=new Registroemisora();
+           ventR.setLocationRelativeTo(null);
            ventR.setVisible(true);
        }
         else
@@ -480,6 +507,7 @@ private static Radioemisora emisora = null;
         if(emisora!=null)
         {
             RegistrarLocutor ventL=new RegistrarLocutor();
+            ventL.setLocationRelativeTo(null);
             ventL.setVisible(true);
         }
         else
@@ -499,6 +527,7 @@ private static Radioemisora emisora = null;
             else
             {
             AgregarPrograma prog= new AgregarPrograma();
+            prog.setLocationRelativeTo(null);
             prog.setVisible(true);
             }
         }
@@ -585,6 +614,7 @@ private static Radioemisora emisora = null;
         else
         {
           AgregarDisco AG=new AgregarDisco();
+          AG.setLocationRelativeTo(null);
           AG.setVisible(true);
         }
     }//GEN-LAST:event_jMenuItem4ActionPerformed
@@ -604,6 +634,7 @@ private static Radioemisora emisora = null;
             else
             {
                    ModificarLocu VenM=new ModificarLocu();
+                   VenM.setLocationRelativeTo(null);
                    VenM.setVisible(true);
             }
         }
@@ -624,6 +655,7 @@ private static Radioemisora emisora = null;
             else
             {
                 ModificarPrograma ventanaP=new ModificarPrograma();
+                ventanaP.setLocationRelativeTo(null);
                 ventanaP.setVisible(true);
             }
         }
@@ -640,6 +672,7 @@ private static Radioemisora emisora = null;
             else
             {
                 ModificarCancion MC=new ModificarCancion();
+                MC.setLocationRelativeTo(null);
                 MC.setVisible(true);
             }
             }
@@ -660,6 +693,7 @@ private static Radioemisora emisora = null;
             else
             {
                 ModificarDisco AG=new ModificarDisco();
+                AG.setLocationRelativeTo(null);
                 AG.setVisible(true);
             }
             }
@@ -680,6 +714,7 @@ private static Radioemisora emisora = null;
             else
             {
                 agregarCancion AG=new agregarCancion();
+                AG.setLocationRelativeTo(null);
                 AG.setVisible(true);
             }
             }
@@ -698,6 +733,7 @@ private static Radioemisora emisora = null;
         else
         {
             AgregarDigital AC=new AgregarDigital();
+            AC.setLocationRelativeTo(null);
             AC.setVisible(true);
         }
     }//GEN-LAST:event_jMenuItem5ActionPerformed
@@ -720,6 +756,7 @@ private static Radioemisora emisora = null;
                 model.addRow(new Object[]{locutorp.getNombre(),locutorp.getIdentificacion(),locutorp.getDireccion(),locutorp.getTelefono(),locutorp.getCorreo(),locutorp.getFechaNacimiento(),locutorp.isSexo()});
               }
             lista.setVisible(true);
+            lista.setLocationRelativeTo(null);
             lista.setSize(800,500);
             }  
             else
@@ -752,14 +789,7 @@ private static Radioemisora emisora = null;
             Programa progra=MainWindow.getProg(SelecProg.getSelectedItem().toString());
             PlayList play=emisora.genplay(progra.getGenero(),progra);
             progra.setPlaylist(play);
-            String msjCorreo = "Lista de canciones en la PlayList"+"\n";
-            ArrayList<Cancion> listaCanciones = play.getCanciones();
-            for(int i = 0; i < listaCanciones.size(); i++)
-              {
-                msjCorreo = msjCorreo + (listaCanciones.get(i)).getNombre() + "\n";
-              }
-            String to = (progra.getLocutor()).getCorreo();
-            play.enviarCorreo(to, msjCorreo);
+            JOptionPane.showMessageDialog(null, "Se ha creado la playlist");
             }
             }
         }
@@ -786,6 +816,7 @@ private static Radioemisora emisora = null;
                 model.addRow(new Object[]{prograp.getNombre(),prograp.getHorario(),prograp.getDuracion(),prograp.getGenero(),prograp.getLocutor().getNombre()});
               }
             lista.setVisible(true);
+            lista.setLocationRelativeTo(null);
             lista.setSize(800,500);
             }  
             else
@@ -801,11 +832,45 @@ private static Radioemisora emisora = null;
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
         // TODO add your handling code here:
+        if(!(emisora==null))
+        {
+            if(!emisora.getDigitales().isEmpty()&&!emisora.getDisc().isEmpty())
+            {
+            CancionesPorGenero CG=new CancionesPorGenero();
+            CG.setLocationRelativeTo(null);
+            CG.setVisible(true);
+            }
+            else
+            {
+               JOptionPane.showMessageDialog(null, "No existen canciones"); 
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "No existe radioemisora"); 
+        }
+        
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
         // TODO add your handling code here:
-        
+        if(!(emisora==null))
+        {
+            if(!emisora.getDigitales().isEmpty()&&!emisora.getDisc().isEmpty())
+            {
+            CanAut CA=new CanAut();
+            CA.setVisible(true);
+            CA.setLocationRelativeTo(null);
+            }
+            else
+            {
+               JOptionPane.showMessageDialog(null, "No existen canciones"); 
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "No existe radioemisora"); 
+        }
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     /**

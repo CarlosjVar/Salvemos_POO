@@ -53,7 +53,8 @@ public class AgregarPrograma extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Agregar programa");
 
         jLabel1.setDisplayedMnemonic('\u000f');
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N

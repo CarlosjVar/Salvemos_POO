@@ -44,19 +44,5 @@ public class PlayList {
         public String toString() {
             return "PlayList{" + "duracion=" + duracion + ", nombre=" + nombre +'}';
         }
-        public void enviarCorreo(String to, String msg){
-            Timer tiempo=new Timer();
-            TimerTask tarea= new TimerTask(){
-                @Override
-                public void run() {
-                    Mailer correoE;
-                    correoE = new Mailer ();
-                    correoE.send(to,"Creacion de playlist",msg);
-                    JOptionPane.showMessageDialog(null, "Se termino la playlist y el correo fue enviado"); 
-                }
-            };
-            
-            long delay=(long)(getDuracion()*60000);
-            tiempo.schedule(tarea, delay);
-        }
+        
     }

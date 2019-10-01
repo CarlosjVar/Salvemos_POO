@@ -52,7 +52,8 @@ public class AgregarDisco extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Agregar disco");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jLabel1.setText("Nombre del disco:");
@@ -141,9 +142,7 @@ public class AgregarDisco extends javax.swing.JFrame {
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(203, 203, 203)
-                                    .addComponent(jButton1))
+                                .addComponent(jButton1)
                                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(38, Short.MAX_VALUE))

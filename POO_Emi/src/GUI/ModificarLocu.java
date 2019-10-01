@@ -60,7 +60,8 @@ public class ModificarLocu extends javax.swing.JFrame {
         m = new javax.swing.JRadioButton();
         f = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Modificar locutor");
 
         locutores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sin seleccion" }));
 

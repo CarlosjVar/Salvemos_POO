@@ -62,7 +62,8 @@ public class ModificarPrograma extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Modificar programa");
 
         jLabel1.setDisplayedMnemonic('\u000f');
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N

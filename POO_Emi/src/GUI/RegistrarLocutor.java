@@ -59,7 +59,7 @@ public class RegistrarLocutor extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Registrar Locutor");
 
         Nomb.setToolTipText("");
@@ -131,8 +131,7 @@ public class RegistrarLocutor extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(m)
                         .addGap(18, 18, 18)
-                        .addComponent(f)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(f))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel7)

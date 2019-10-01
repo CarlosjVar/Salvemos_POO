@@ -56,7 +56,8 @@ public class AgregarDigital extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Agregar digital");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jLabel5.setText("Nombre de la cancion:");

@@ -47,7 +47,8 @@ public class Registroemisora extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         ErrFrec1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Registrar Emisora");
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Nombre de Radioemisora:");
